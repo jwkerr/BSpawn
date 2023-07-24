@@ -24,7 +24,7 @@ public class TownTogglePublic implements Listener {
 
             Confirmation
                     .runOnAccept(() -> town.setPublic(true))
-                    .setTitle("You must pay to toggle public to true. This will cost " + config.getInt("cost") + " gold.")
+                    .setTitle("You must pay to toggle public to true. This will cost " + config.getInt("cost") + " gold and will require daily upkeep to stay true.")
                     .setCost(new ConfirmationTransaction(() -> config.getDouble("cost"), town.getAccount(), "Cost of toggling public to true."))
                     .sendTo(event.getSender());
         }
