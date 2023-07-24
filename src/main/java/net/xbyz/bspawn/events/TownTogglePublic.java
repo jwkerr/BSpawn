@@ -1,5 +1,6 @@
 package net.xbyz.bspawn.events;
 
+import com.palmergames.bukkit.towny.TownyEconomyHandler;
 import com.palmergames.bukkit.towny.confirmations.Confirmation;
 import com.palmergames.bukkit.towny.confirmations.ConfirmationTransaction;
 import com.palmergames.bukkit.towny.event.town.toggle.TownTogglePublicEvent;
@@ -24,7 +25,7 @@ public class TownTogglePublic implements Listener {
 
             Confirmation
                     .runOnAccept(() -> town.setPublic(true))
-                    .setTitle("You must pay to toggle public to true. This will cost " + config.getInt("cost") + " gold and will require daily upkeep to stay true.")
+                    .setTitle("You must pay to toggle public to true. This will cost " + TownyEconomyHandler.getFormattedBalance(config.getInt("cost")) + " and will require " + TownyEconomyHandler.getFormattedBalance(config.getInt("cost")) + " daily upkeep to stay true.")
                     .setCost(new ConfirmationTransaction(() -> config.getDouble("cost"), town.getAccount(), "Cost of toggling public to true."))
                     .sendTo(event.getSender());
         }
