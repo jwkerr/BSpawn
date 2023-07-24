@@ -1,0 +1,10 @@
+name: BSpawn
+version: '${project.version}'
+main: net.xbyz.bspawn.Main
+api-version: '1.19'
+dependencies:
+  - name: Towny
+    required: true
+authors: [Fruitloopins]
+description: Make a public /t spawn cost upkeep.
+website: https://xbyz.net
