@@ -6,5 +6,5 @@ dependencies:
   - name: Towny
     required: true
 authors: [Fruitloopins]
-description: Make a public /t spawn cost upkeep.
-website: https://xbyz.net
+description: Adds a cost to toggling and maintaining a public /t spawn in Towny.
+website: https://earthmc.net
