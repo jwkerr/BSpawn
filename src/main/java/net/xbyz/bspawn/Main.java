@@ -1,7 +1,7 @@
 package net.xbyz.bspawn;
 
-import net.xbyz.bspawn.events.NewDay;
-import net.xbyz.bspawn.events.TownTogglePublic;
+import net.xbyz.bspawn.listeners.NewDayListener;
+import net.xbyz.bspawn.listeners.TownTogglePublicListener;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -14,8 +14,8 @@ public final class Main extends JavaPlugin {
         config.options().copyDefaults(true);
         saveConfig();
 
-        getServer().getPluginManager().registerEvents(new TownTogglePublic(config), this);
-        getServer().getPluginManager().registerEvents(new NewDay(config), this);
+        getServer().getPluginManager().registerEvents(new TownTogglePublicListener(config), this);
+        getServer().getPluginManager().registerEvents(new NewDayListener(config), this);
 
         getLogger().info("BSpawn enabled");
     }

@@ -1,4 +1,4 @@
-package net.xbyz.bspawn.events;
+package net.xbyz.bspawn.listeners;
 
 import com.palmergames.bukkit.towny.TownyEconomyHandler;
 import com.palmergames.bukkit.towny.confirmations.Confirmation;
@@ -9,10 +9,10 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 
-public class TownTogglePublic implements Listener {
+public class TownTogglePublicListener implements Listener {
     private final FileConfiguration config;
 
-    public TownTogglePublic(FileConfiguration config) {
+    public TownTogglePublicListener(FileConfiguration config) {
         this.config = config;
     }
 

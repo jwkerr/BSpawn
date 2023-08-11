@@ -1,4 +1,4 @@
-package net.xbyz.bspawn.events;
+package net.xbyz.bspawn.listeners;
 
 import com.palmergames.bukkit.towny.TownyAPI;
 import com.palmergames.bukkit.towny.event.NewDayEvent;
@@ -7,10 +7,10 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 
-public class NewDay implements Listener {
+public class NewDayListener implements Listener {
     private final FileConfiguration config;
 
-    public NewDay(FileConfiguration config) {
+    public NewDayListener(FileConfiguration config) {
         this.config = config;
     }
 
