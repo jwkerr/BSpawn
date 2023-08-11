@@ -25,8 +25,8 @@ public class TownTogglePublicListener implements Listener {
 
             Confirmation
                     .runOnAccept(() -> town.setPublic(true))
-                    .setTitle("You must pay to toggle public to true. This will cost " + TownyEconomyHandler.getFormattedBalance(config.getInt("cost")) + " and will require " + TownyEconomyHandler.getFormattedBalance(config.getInt("cost")) + " daily upkeep to stay true.")
-                    .setCost(new ConfirmationTransaction(() -> config.getDouble("cost"), town.getAccount(), "Cost of toggling public to true."))
+                    .setTitle("You must pay to toggle public to true. This will cost " + TownyEconomyHandler.getFormattedBalance(config.getInt("toggleCost")) + " and will require " + TownyEconomyHandler.getFormattedBalance(config.getInt("upkeepCost")) + " daily upkeep to remain true.")
+                    .setCost(new ConfirmationTransaction(() -> config.getDouble("toggleCost"), town.getAccount(), "Cost of toggling public to true."))
                     .sendTo(event.getSender());
         }
     }

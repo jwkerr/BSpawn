@@ -18,7 +18,7 @@ public class NewDayListener implements Listener {
     public void onNewDay(NewDayEvent event) {
         for (Town town : TownyAPI.getInstance().getTowns()) {
             if (town.isPublic() && town.getAccount().getHoldingBalance() >= config.getDouble("cost")) {
-                town.getAccount().withdraw(config.getDouble("cost"), "Public status upkeep.");
+                town.getAccount().withdraw(config.getDouble("upkeepCost"), "Public status upkeep.");
             } else {
                 town.setPublic(false);
             }

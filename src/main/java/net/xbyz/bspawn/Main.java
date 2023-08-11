@@ -10,7 +10,8 @@ public final class Main extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        config.addDefault("cost", 5.0);
+        config.addDefault("toggleCost", 5.0);
+        config.addDefault("upkeepCost", 5.0);
         config.options().copyDefaults(true);
         saveConfig();
 
