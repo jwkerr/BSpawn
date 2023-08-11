@@ -1,4 +1,4 @@
-package net.xbyz.bspawn.listeners;
+package net.earthmc.bspawn.listeners;
 
 import com.palmergames.bukkit.towny.TownyAPI;
 import com.palmergames.bukkit.towny.event.NewDayEvent;

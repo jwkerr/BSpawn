@@ -1,7 +1,7 @@
-package net.xbyz.bspawn;
+package net.earthmc.bspawn;
 
-import net.xbyz.bspawn.listeners.NewDayListener;
-import net.xbyz.bspawn.listeners.TownTogglePublicListener;
+import net.earthmc.bspawn.listeners.TownTogglePublicListener;
+import net.earthmc.bspawn.listeners.NewDayListener;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 

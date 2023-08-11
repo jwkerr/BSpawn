@@ -1,6 +1,6 @@
 name: BSpawn
 version: '${project.version}'
-main: net.xbyz.bspawn.Main
+main: net.earthmc.bspawn.Main
 api-version: '1.19'
 dependencies:
   - name: Towny
