@@ -1,11 +1,12 @@
 package net.earthmc.bspawn;
 
-import net.earthmc.bspawn.listeners.TownTogglePublicListener;
-import net.earthmc.bspawn.listeners.NewDayListener;
+import net.earthmc.bspawn.command.ToggleAllFalseCommand;
+import net.earthmc.bspawn.listener.TownTogglePublicListener;
+import net.earthmc.bspawn.listener.NewDayListener;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public final class Main extends JavaPlugin {
+public final class BSpawn extends JavaPlugin {
     private final FileConfiguration config = getConfig();
 
     @Override
@@ -17,6 +18,8 @@ public final class Main extends JavaPlugin {
 
         getServer().getPluginManager().registerEvents(new TownTogglePublicListener(config), this);
         getServer().getPluginManager().registerEvents(new NewDayListener(config), this);
+
+        getCommand("toggleallfalse").setExecutor(new ToggleAllFalseCommand());
 
         getLogger().info("BSpawn enabled");
     }

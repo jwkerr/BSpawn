@@ -1,4 +1,4 @@
-package net.earthmc.bspawn.listeners;
+package net.earthmc.bspawn.listener;
 
 import com.palmergames.bukkit.towny.TownyEconomyHandler;
 import com.palmergames.bukkit.towny.TownyMessaging;

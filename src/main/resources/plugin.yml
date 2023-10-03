@@ -1,0 +1,22 @@
+name: BSpawn
+version: '${project.version}'
+main: net.earthmc.bspawn.BSpawn
+api-version: '1.19'
+dependencies:
+  - name: Towny
+    required: true
+authors: [Fruitloopins]
+description: Adds a cost to toggling and maintaining a public /t spawn in Towny.
+website: https://earthmc.net
+
+permissions:
+  bspawn.toggleallfalse:
+    description: Grants permission to use the toggleallfalse command
+    default: op
+
+commands:
+  toggleallfalse:
+    description: Toggle all towns' public status to false
+    usage: /toggleallfalse
+    aliases: [taf]
+    permission: bspawn.toggleallfalse
