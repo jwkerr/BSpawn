@@ -19,6 +19,7 @@ public class ToggleAllFalseCommand implements CommandExecutor {
         try {
             for (Town town : TownyAPI.getInstance().getTowns()) {
                 town.setPublic(false);
+                town.save();
             }
 
             sender.sendMessage("Successfully set all towns to public=false");

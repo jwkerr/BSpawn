@@ -28,6 +28,7 @@ public class TownTogglePublicListener implements Listener {
             Confirmation
                     .runOnAccept(() -> {
                         town.setPublic(true);
+                        town.save();
                         TownyMessaging.sendPrefixedTownMessage(town, Translatable.of("msg_changed_public", "enabled"));
                     })
                     .setTitle("You must pay to toggle public to true. This will cost " + TownyEconomyHandler.getFormattedBalance(config.getInt("toggleCost")) + " and will require " + TownyEconomyHandler.getFormattedBalance(config.getInt("upkeepCost")) + " daily upkeep each new day to remain true.")

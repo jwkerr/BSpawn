@@ -21,6 +21,7 @@ public class NewDayListener implements Listener {
                 town.getAccount().withdraw(config.getDouble("upkeepCost"), "Public status upkeep.");
             } else {
                 town.setPublic(false);
+                town.save();
             }
         }
     }
