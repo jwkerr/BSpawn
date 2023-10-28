@@ -6,8 +6,9 @@ dependencies:
   - name: Towny
     required: true
 authors: [Fruitloopins]
-description: Adds a cost to toggling and maintaining a public /t spawn in Towny.
+description: Adds a cost to toggling and maintaining a public /t spawn in Towny
 website: https://earthmc.net
+folia-supported: true
 
 permissions:
   bspawn.toggleallfalse:
