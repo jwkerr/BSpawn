@@ -6,14 +6,14 @@
 
     <groupId>net.earthmc</groupId>
     <artifactId>BSpawn</artifactId>
-    <version>0.1.1</version>
+    <version>0.1.2</version>
     <packaging>jar</packaging>
 
     <name>BSpawn</name>
 
-    <description>Adds a cost to toggling and maintaining a public /t spawn in Towny.</description>
+    <description>Allow players to pay to allow outsiders to spawn</description>
     <properties>
-        <java.version>1.8</java.version>
+        <java.version>17</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <url>https://earthmc.net</url>

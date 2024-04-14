@@ -20,18 +20,17 @@ public class NewDayListener implements Listener {
     @EventHandler
     public void onNewDay(NewDayEvent event) {
         for (Town town : TownyAPI.getInstance().getTowns()) {
-            if (!town.isPublic())
+            if (!TownMetadataManager.getCanOutsidersSpawn(town))
                 continue;
 
             if (Instant.now().getEpochSecond() - TownMetadataManager.getToggledPublicOnAt(town) < 86400)
                 continue;
 
             if (town.getAccount().getHoldingBalance() >= config.getDouble("upkeepCost")) {
-                town.getAccount().withdraw(config.getDouble("upkeepCost"), "Public status upkeep.");
+                town.getAccount().withdraw(config.getDouble("upkeepCost"), "Outsiders can spawn status upkeep.");
             } else {
-                town.setPublic(false);
+                TownMetadataManager.setCanOutsidersSpawn(town, false);
                 TownMetadataManager.setToggledPublicOnAt(town, null);
-                town.save();
             }
         }
     }

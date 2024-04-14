@@ -1,9 +1,10 @@
 package net.earthmc.bspawn;
 
-import net.earthmc.bspawn.command.ToggleAllFalseCommand;
+import com.palmergames.bukkit.towny.TownyCommandAddonAPI;
+import net.earthmc.bspawn.command.TownOutsidersCanSpawnCommand;
 import net.earthmc.bspawn.config.Config;
-import net.earthmc.bspawn.listener.TownTogglePublicListener;
 import net.earthmc.bspawn.listener.NewDayListener;
+import net.earthmc.bspawn.listener.TownSpawnListener;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -15,16 +16,16 @@ public final class BSpawn extends JavaPlugin {
         Config.init(config);
         saveConfig();
 
-        getServer().getPluginManager().registerEvents(new TownTogglePublicListener(config), this);
-        getServer().getPluginManager().registerEvents(new NewDayListener(config), this);
-
-        getCommand("toggleallfalse").setExecutor(new ToggleAllFalseCommand());
-
-        getLogger().info("BSpawn enabled");
+        registerCommands();
+        registerListeners();
     }
 
-    @Override
-    public void onDisable() {
-        getLogger().info("BSpawn disabled");
+    private void registerCommands() {
+        TownyCommandAddonAPI.addSubCommand(TownyCommandAddonAPI.CommandType.TOWN_TOGGLE, "outsiderscanspawn", new TownOutsidersCanSpawnCommand(config));
+    }
+
+    private void registerListeners() {
+        getServer().getPluginManager().registerEvents(new TownSpawnListener(), this);
+        getServer().getPluginManager().registerEvents(new NewDayListener(config), this);
     }
 }
