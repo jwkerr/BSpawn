@@ -23,7 +23,8 @@ public class NewDayListener implements Listener {
             if (!TownMetadataManager.getCanOutsidersSpawn(town))
                 continue;
 
-            if (Instant.now().getEpochSecond() - TownMetadataManager.getToggledPublicOnAt(town) < 86400)
+            Long toggled = TownMetadataManager.getToggledPublicOnAt(town);
+            if (toggled == null || Instant.now().getEpochSecond() - toggled < 86400)
                 continue;
 
             if (town.getAccount().getHoldingBalance() >= config.getDouble("upkeepCost")) {
